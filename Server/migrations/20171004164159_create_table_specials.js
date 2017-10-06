@@ -10,11 +10,11 @@ exports.up = function(knex) {
       .onDelete('CASCADE');
     table.integer('damage').notNullable();
     table.string('guard').notNullable();
-    table.integer('attack lvl').notNullable();
+    table.integer('attack_lvl').notNullable();
     table.integer('startup').notNullable();
     table.integer('active').notNullable();
     table.integer('recovery').notNullable();
-    table.integer('frame advantage');
+    table.integer('frame_advantage');
     table.string('cancel');
     table.string('roman');
   });
