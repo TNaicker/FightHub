@@ -8,13 +8,17 @@ exports.up = function(knex) {
       .references('id')
       .inTable('characters')
       .onDelete('CASCADE');
-    table.integer('damage').notNullable();
+    table.string('damage').notNullable();
     table.string('guard').notNullable();
-    table.integer('attack lvl').notNullable();
-    table.integer('startup').notNullable();
-    table.integer('active').notNullable();
-    table.integer('recovery').notNullable();
-    table.integer('frame advantage');
+    table.string('tension').notNullable();
+    table.string('risc').notNullable();
+    table.string('prorate').notNullable();
+    table.string('attack_lvl').notNullable();
+    table.string('startup').notNullable();
+    table.string('active').notNullable();
+    table.string('invuln').notNullable();
+    table.string('recovery').notNullable();
+    table.string('frame_advantage');
     table.string('cancel');
     table.string('roman');
   });
