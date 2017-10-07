@@ -55,7 +55,8 @@ router.get('/api/:gameID/characters', (req, res) => {
       knex('characters')
         .where("game_id", GAME)
         .then((characterList) => {
-          res.send(characterList[0]);
+          var parsedList = JSON.stringify(characterList)
+          res.send(parsedList);
         })
         .catch((err) => {
           console.log(err);
