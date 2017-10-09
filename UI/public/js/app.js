@@ -98,7 +98,16 @@ const AppFooter = React.createClass({
       </div>
     )
   }
+})
 
+const AppGameList = React.createClass({
+  render: function() {
+    return(
+      <div>
+        <h1>{this.props.value}</h1>
+      </div>
+    )
+  }
 })
 
 const App = React.createClass({
@@ -107,6 +116,19 @@ const App = React.createClass({
       client: new Client(),
     }
   },
+  componentWillMount: function() {
+    this.state.client.games().then((games) => {
+      //Declaration of consts for holding game data
+      const gameArr = [];
+      const parsed = JSON.parse(games);
+      //Putting game names into array
+      parsed.forEach((game) => {
+        gameArr.push(game.game_name);
+      })
+      //Set state gameName to array of game names
+      this.setState({gameName: gameArr})
+    })
+  },
   render: function () {
     return (
       <div>
@@ -114,8 +136,16 @@ const App = React.createClass({
         <AppCarousel/>
         <AppBody/>
         <AppFooter/>
+        <div>
+
+        </div>
       </div>
     );
+  },
+  createList: function() {
+    return this.state.gameName.map((name) => (
+      <AppGameList value={name}/>
+    ))
   }
 })
 
