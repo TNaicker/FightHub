@@ -6,7 +6,10 @@ class Client {
   }
   // Games function just returns a list of the games in my db
   games() {
-    return request(BASE.concat('/games'))
+    return request({
+      uri: BASE.concat('/games'),
+      json: true,
+    })
   }
 
   // Takes gameID as an argument to find the characters from the game you specify

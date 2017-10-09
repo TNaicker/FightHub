@@ -1,10 +1,8 @@
 const React = require('react');
 const ReactDOM = require('react-dom');
-const style = require('../css/app.css');
-const Client = require('../../../Client/clientFile');
+const style = require('../../css/app.css');
+const Client = require('../../../../Client/clientFile');
 import { Router, Route, hashHistory } from 'react-router'
-import Home from './modules/homePage';
-import Taco from './modules/taco';
 
 //HEADER FOR THE WEBSITE
 const AppHead = React.createClass({
@@ -151,16 +149,33 @@ const App = React.createClass({
   }
 })
 
-// Wait for the window to load
-window.onload = function () {
-  const exampleApp = document.querySelector('#story-app');
-
-  ReactDOM.render(
-    <Router history={hashHistory}>
-      <Route path="/" component={Home}>
-        <Route path="/taco" component={Taco}/>
-      </Route>
-    </Router>,
-    exampleApp
-  );
-}
+export default React.createClass({
+  getInitialState: function() {
+    return {
+      client: new Client(),
+      gameName: [],
+    }
+  },
+  componentWillMount: function() {
+    this.state.client.games().then((games) => {
+      //Declaration of consts for holding game data
+      const gameArr = [];
+      //Putting game names into array
+      games.forEach((game) => {
+        gameArr.push(game.game_name);
+      })
+      //Set state gameName to array of game names
+      this.setState({gameName: gameArr})
+    })
+  },
+  render: function () {
+    return (
+      <div>
+        <AppHead/>
+        <AppCarousel/>
+        <AppBody gameNames={this.state.gameName}/>
+        <AppFooter/>
+      </div>
+    );
+  }
+})
