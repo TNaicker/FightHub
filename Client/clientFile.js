@@ -14,7 +14,10 @@ class Client {
 
   // Takes gameID as an argument to find the characters from the game you specify
   characters(gameID) {
-    return request(BASE.concat('/' + gameID + '/characters'))
+    return request({
+      uri: BASE.concat('/' + gameID + '/characters'),
+      json: true,
+    })
   }
 
   // Normals returns a specified character's normal move information
