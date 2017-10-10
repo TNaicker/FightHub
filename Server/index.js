@@ -4,6 +4,12 @@ const knex = require('./db');
 
 const PORT = 8000;
 
+app.use((req, res, next) => {
+  res.set('Access-Control-Allow-Origin', '*');
+
+  next()
+});
+
 const apiRoutes = require('./routing/api');
 app.use(apiRoutes);
 
