@@ -8,7 +8,10 @@ html, body {
   background-size: 100%;
   background-attachment: fixed;
 }
+
+/*====================================*/
 /*This is the css for the header area */
+/*====================================*/
 .header {
   width: 100%;
   height: 100px;
@@ -24,8 +27,9 @@ html, body {
   height: 60px;
   background: black;
 }
-
+/*=================================================*/
 /*This is the css for the ul top nav in the header */
+/*=================================================*/
 ul {
   list-style-type: none;
   display: inline-block;
@@ -51,21 +55,9 @@ li a:hover {
 .bottom-nav li {
   margin-left: 260px;
 }
-
+/*=========================================*/
 /*This is for the carousel below the header*/
-.carousel {
-  width: 100%;
-  height: 600px;
-  background-image: url("http://nichegamer.com/wp-content/uploads/2015/09/guilty-gear-xrd-revelator-09-14-15-1.jpg");
-  background-repeat: no-repeat;
-  background-size: 100%;
-  position: relative;
-}
-.carousel:hover {
-  box-shadow: inset 120px 0 15px -4px rgba(0, 0, 0, 0.8), inset -120px 0 8px -4px rgba(0, 0, 0, 0.8);
-  opacity: 0.90;
-  transition: box-shadow 0.3s ease-in-out;
-}
+/*=========================================*/
 .carousel-description {
   color: white;
   height: 50px;
@@ -80,8 +72,29 @@ li a:hover {
 .carousel-description button {
   background: rgba(255, 255, 255, 0.4)
 }
+.carousel-container {
+  margin: 0 auto;
+  padding: 40px;
+  width: 100%;
+  height: 600px;
+  color: #333;
+  background-size: 100%;
+}
+.slick-slide {
+  width: 100%;
+  height: 600px;
+  position: relative;
+  z-index: 2;
+}
+.carousel-container:hover {
+  box-shadow: inset 120px 0 15px -4px rgba(0, 0, 0, 0.8), inset -120px 0 8px -4px rgba(0, 0, 0, 0.8);
+  opacity: 0.90;
+  transition: box-shadow 0.3s ease-in-out;
+}
 
+/*======================================*/
 /*This is for the main body of the page*/
+/*======================================*/
 .empty-space {
   height: 136vh;
 }
@@ -169,7 +182,10 @@ li a:hover {
 .body-char:hover {
   opacity: 0.6;
 }
+
+/*======================*/
 /*This is for the footer*/
+/*======================*/
 .footer {
   height: 300px;
   margin-bottom: -50px;
@@ -177,25 +193,4 @@ li a:hover {
 }
 .foot {
   height: 100%;
-}
-
-
-.carousel-container {
-  margin: 0 auto;
-  padding: 40px;
-  width: 100%;
-  height: 600px;
-  color: #333;
-  background-size: 100%;
-}
-.slick-slide {
-  width: 100%;
-  height: 600px;
-  position: relative;
-  z-index: 2;
-}
-.carousel-container:hover {
-  box-shadow: inset 120px 0 15px -4px rgba(0, 0, 0, 0.8), inset -120px 0 8px -4px rgba(0, 0, 0, 0.8);
-  opacity: 0.90;
-  transition: box-shadow 0.3s ease-in-out;
 }
