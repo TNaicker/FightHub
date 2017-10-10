@@ -29,16 +29,18 @@ module.exports = {
           { loader: "style-loader" },
           { loader: "css-loader" }
         ]
+      },
+      {
+        test: /\.(png|jpg|gif|eot|svg|ttf|woff|woff2)$/,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 81920
+            }
+          }
+        ]
       }
-    ],
-    loaders: [
-        {
-            test: /\.(jpe?g|png|gif|svg)$/i,
-            loaders: [
-                'file-loader?hash=sha512&digest=hex&name=[hash].[ext]',
-                'image-webpack-loader?bypassOnDebug&optimizationLevel=7&interlaced=false'
-            ]
-        }
     ]
   },
   node: {
