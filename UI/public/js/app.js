@@ -6,6 +6,7 @@ import { Router, Route, hashHistory } from 'react-router'
 import Home from './modules/homePage';
 import Taco from './modules/taco';
 
+
 //HEADER FOR THE WEBSITE
 const AppHead = React.createClass({
   render: function() {
@@ -75,6 +76,7 @@ const AppBody = React.createClass({
               </div>
             </div>
             <div className="row body-midRow">
+
               <div className="col-xs-11 body-mid" style={{color: 'red'}}>
                 { this.createList() }
               </div>
@@ -148,6 +150,11 @@ const App = React.createClass({
         <AppFooter/>
       </div>
     );
+  },
+  createList: function() {
+    return this.state.gameName.map((name) => (
+      <AppGameList value={name}/>
+    ))
   }
 })
 
