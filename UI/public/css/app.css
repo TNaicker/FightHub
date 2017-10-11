@@ -4,7 +4,7 @@
 html, body {
   height: 100%;
   background-image:
-  url("https://images7.alphacoders.com/316/316707.jpg");
+  url("https://www.fightersgeneration.com/nz2/game/guiltygear-xx-reload-background-thegrove.png");
   background-size: 100%;
   background-attachment: fixed;
 }
@@ -13,6 +13,7 @@ html, body {
 /*This is the css for the header area */
 /*====================================*/
 .header {
+  font-family: 'Press Start 2P', cursive;
   width: 100%;
   height: 100px;
   background: black;
@@ -25,7 +26,7 @@ html, body {
 .head-lower {
   width: 102.5%;
   height: 60px;
-  background: black;
+  background: #010223;
 }
 /*=================================================*/
 /*This is the css for the ul top nav in the header */
@@ -88,7 +89,7 @@ li a:hover {
 }
 .carousel-container:hover {
   box-shadow: inset 120px 0 15px -4px rgba(0, 0, 0, 0.8), inset -120px 0 8px -4px rgba(0, 0, 0, 0.8);
-  opacity: 0.90;
+  opacity: 0.95;
   transition: box-shadow 0.3s ease-in-out;
 }
 
@@ -183,13 +184,39 @@ li a:hover {
   opacity: 0.6;
 }
 
+/*==================================*/
+/*This is for the characterbody page*/
+/*==================================*/
+.info-cell {
+  margin: 0 auto;
+  margin-top: 0;
+  border: 2px solid red;
+  height: 98%;
+}
+.info-top {
+  font-family: 'Merriweather', serif;
+  color: white;
+  border: 1px solid black;
+  background-color: #333333;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  height: 90vh;
+}
+.char-profile {
+  width: 100%;
+  max-height: 100%;
+}
+.universal{
+  display: inline-block;
+}
+
+
 /*======================*/
 /*This is for the footer*/
 /*======================*/
 .footer {
   height: 300px;
   margin-bottom: -50px;
-  background: black;
+  background: #010223;
 }
 .foot {
   height: 100%;
