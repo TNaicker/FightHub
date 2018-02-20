@@ -11,9 +11,9 @@ const characterDefinition = {
   dizzy: 6,
   elphelt: 7,
   faust: 8,
-  haehyun: 9,
-  ino: 10,
-  jacko: 11,
+  kum: 9,
+  'i-no': 10,
+  'jack-o': 11,
   jam: 12,
   johnny: 13,
   ky: 14,
@@ -54,9 +54,9 @@ router.get('/api/:gameID/characters', (req, res) => {
       //If the game exists then we will dive into the character table and pull any character that is linked to the related game ID.
       knex('characters')
         .where("game_id", GAME)
+        .orderBy('character_name', 'asc')
         .then((characterList) => {
-          var parsedList = JSON.stringify(characterList)
-          res.send(parsedList);
+          res.send(characterList);
         })
         .catch((err) => {
           console.log(err);

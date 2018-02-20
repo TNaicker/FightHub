@@ -20,10 +20,20 @@ class Client {
     })
   }
 
+  character(charName) {
+    return request({
+      uri: BASE.concat('/' + charName),
+      json: true,
+    })
+  }
+
   // Normals returns a specified character's normal move information
   // I will edit this route and function to specify a game as well.
   normals(charName) {
-    return request(BASE.concat('/' + charName + '/normals'))
+    return request({
+      uri: BASE.concat('/' + charName + '/normals'),
+      json: true,
+    })
   }
 }
 

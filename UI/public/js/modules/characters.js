@@ -1,6 +1,7 @@
 import React from 'react'
 import AppBody from './components/realBody';
-// require('../../css/taco.css');
+import { Router, Route, hashHistory, Link } from 'react-router'
+
 const Client = require('../../../../Client/clientFile');
 const charImages = [
  'url(http://guiltygear.us/ggxrdr/wp-content/uploads/2017/05/R2_CG25c.jpg)',
@@ -11,11 +12,11 @@ const charImages = [
  'url(http://guiltygear.us/ggxrdr/wp-content/uploads/2017/05/R2_CG23b.jpg)',
  'url(http://guiltygear.us/ggxrdr/wp-content/uploads/2017/05/R2_CG16a.jpg)',
  'url(http://guiltygear.us/ggxrdr/wp-content/uploads/2017/05/R2_CG8a.jpg)',
- 'url(http://guiltygear.us/ggxrdr/wp-content/uploads/2017/05/R2_CG21a.jpg)',
  'url(http://guiltygear.us/ggxrdr/wp-content/uploads/2017/05/R2_CG12a.jpg)',
  'url(http://guiltygear.us/ggxrdr/wp-content/uploads/2017/05/R2_CG19a.jpg)',
  'url(http://guiltygear.us/ggxrdr/wp-content/uploads/2017/05/R2_CG20a.jpg)',
  'url(http://guiltygear.us/ggxrdr/wp-content/uploads/2017/05/R2_CG18a.jpg)',
+ 'url(http://guiltygear.us/ggxrdr/wp-content/uploads/2017/05/R2_CG21a.jpg)',
  'url(http://guiltygear.us/ggxrdr/wp-content/uploads/2017/05/R2_CG2b.jpg)',
  'url(http://guiltygear.us/ggxrdr/wp-content/uploads/2017/05/R2_CG17a.jpg)',
  'url(http://guiltygear.us/ggxrdr/wp-content/uploads/2017/05/R2_CG3a.jpg)',
@@ -38,10 +39,10 @@ const AppCharacterList = React.createClass({
     };
   },
   render() {
+    console.log(this.state.characters);
     const items = this.state.characters.map((name, ind) => {
-      console.log(charImages[ind]);
       // <AppCharacterItem value={name} img={{backgroundImage: charImages[ind]}}/>
-      return <AppCharacterItem img={{backgroundImage: charImages[ind]}}/>
+      return <AppCharacterItem key={ind} id={name} img={{backgroundImage: charImages[ind]}}/>
    })
 
    return (
@@ -68,11 +69,13 @@ const AppCharacterList = React.createClass({
 const AppCharacterItem = React.createClass({
   render: function() {
     return(
+      <Link to={"/characters/" + this.props.id}>
         <div className="row body-char" style={this.props.img}>
           <div className="col-xs-1">
             <p>{this.props.value}</p>
           </div>
         </div>
+      </Link>
     )
   }
 })
