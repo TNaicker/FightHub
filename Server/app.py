@@ -22,6 +22,7 @@ if __name__ == '__main__':
     db_session = scoped_session(sessionmaker(bind=engine))
     for item in db_session.query(Character):
         l.append(item)
+        print item
 
 from flask import Flask, jsonify
 app = Flask(__name__)
@@ -67,17 +68,17 @@ def hello():
     # {'img_url': l[1].img_url},
     # ])
     return jsonify([
-    vars(Character(l[0])),
-    vars(Character(l[1])),
-    vars(Character(l[2])),
-    vars(Character(l[3])),
-    vars(Character(l[4])),
-    vars(Character(l[5])),
-    vars(Character(l[6])),
-    vars(Character(l[7])),
-    vars(Character(l[8])),
-    vars(Character(l[9])),
-    vars(Character(l[10])),
+    # Character(l[0]),
+    # vars(Character(l[1])),
+    # vars(Character(l[2])),
+    # vars(Character(l[3])),
+    # vars(Character(l[4])),
+    # vars(Character(l[5])),
+    # vars(Character(l[6])),
+    # vars(Character(l[7])),
+    # vars(Character(l[8])),
+    # vars(Character(l[9])),
+    # vars(Character(l[10])),
     ])
 
 if __name__ == '__main__':
