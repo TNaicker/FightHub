@@ -3,10 +3,19 @@
 
 html, body {
   height: 100%;
-  background-image:
-  url("https://www.fightersgeneration.com/nz2/game/guiltygear-xx-reload-background-thegrove.png");
+  /* background-image:
+  url("https://www.fightersgeneration.com/nz2/game/guiltygear-xx-reload-background-thegrove.png"); */
+  background-image: url("http://sorensenleather.com/wp-content/uploads/Collections/Victory/victory-royal.jpg");
   background-size: 100%;
   background-attachment: fixed;
+}
+thead {
+  color: black;
+  background: #d9d9d9;
+}
+tbody {
+  color: black;
+  background: #c2c2c2;
 }
 
 /*====================================*/
@@ -21,12 +30,17 @@ html, body {
 .head-upper {
   width: 102.5%;
   height: 40px;
-  background: #333333;
+  /*background: #333333;*/
+  /*background: #dc42f4*/
+  /*background: rgb(40, 122, 255);*/
+  /*background-color: #DB0A5B;*/
+  background-color: rgba(142, 68, 173,1.0);
 }
 .head-lower {
   width: 102.5%;
   height: 60px;
-  background: #010223;
+  /*background: #010223;*/
+  background: black;
 }
 /*=================================================*/
 /*This is the css for the ul top nav in the header */
@@ -50,15 +64,22 @@ li a {
 li a:hover {
     background-color: #111111;
 }
-.bottom-nav {
-  width: 100%;
+.bot-nav-button {
+  text-align: center;
+  height: 100%;
 }
-.bottom-nav li {
-  margin-left: 260px;
+.bot-nav-button button:hover {
+  background-color: red;
+}
+.bot-nav-button button{
+  background: none;
 }
 /*=========================================*/
 /*This is for the carousel below the header*/
 /*=========================================*/
+.mobile-carousel {
+  display: none;
+}
 .carousel-description {
   color: white;
   height: 50px;
@@ -81,6 +102,30 @@ li a:hover {
   color: #333;
   background-size: 100%;
 }
+@media (max-width: 1180px) {
+  .carousel-container {
+    height: 500px;
+  }
+}
+@media (max-width: 1000px) {
+  .carousel-container {
+    height: 400px;
+  }
+}
+@media (max-width: 794px) {
+  .carousel-container {
+    display: none;
+  }
+  .mobile-carousel {
+    display: block;
+    height: 500px;
+    background-image: url("https://pre00.deviantart.net/b024/th/pre/i/2017/180/3/9/guilty_gear_xrd_rev_2___jack_o___wallpaper__by_geniemiragexrd-dbeimvw.png");
+  }
+  .mobile-carousel img {
+    width: 100%;
+    height: 100%;
+  }
+}
 .slick-slide {
   width: 100%;
   height: 600px;
@@ -100,13 +145,18 @@ li a:hover {
   height: 136vh;
 }
 .main {
+  font-family: 'Merriweather', serif;
   height: 150vh;
-  width: 90%;
-  margin-left: 70px;
+  width: 100%;
+  /*margin-left: 70px;*/
   margin-top: 10px;
   border: 1px solid rgba(0, 0, 0, 0.9);
-  background-color: white;
-  background-image: url("http://www.webdesignburn.com/wp-content/uploads/2015/04/Grey-Texture-Background-and-Wallpaper-25.jpg");
+  border-radius: 10px;
+  /*background-color: rgba(12,36,76, 1);*/
+  /*background-color: rgba(219, 10, 91, 0.8);*/
+  background-color: rgba(142, 68, 173, 0.5);
+
+  /*background-image: url("http://www.webdesignburn.com/wp-content/uploads/2015/04/Grey-Texture-Background-and-Wallpaper-25.jpg");*/
   background-size: 100%;
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
   position: absolute;
@@ -115,66 +165,132 @@ li a:hover {
   margin-top: 600px;
 }
 .real-main {
+  font-family: 'Merriweather', serif;
   height: 265vh;
+  width: 100%;
+  /*margin-left: 70px;*/
+  margin-top: 10px;
+  /*border: 1px solid rgba(0, 0, 0, 0.9);*/
+  /*background-color: rgba(12,36,76, 0.9);*/
+  /*background-color: rgba(219, 10, 91, 0.8);*/
+  background-color: rgba(142, 68, 173, 0.5);
+  /*background-color: white;*/
+  background-size: 100%;
+  /*box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);*/
+}
+.login-main {
+  font-family: 'Merriweather', serif;
+  height: 80vh;
   width: 90%;
   margin-left: 70px;
   margin-top: 10px;
   border: 1px solid rgba(0, 0, 0, 0.9);
-  background-color: white;
-  background-image: url("http://www.webdesignburn.com/wp-content/uploads/2015/04/Grey-Texture-Background-and-Wallpaper-25.jpg");
+  background-color: rgba(142, 68, 173, 0.5);
   background-size: 100%;
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
 .body-top {
   border: 1px solid black;
   height: 150px;
-  margin-left: 40px;
+  margin-left: 30px;
   margin-top: 20px;
-  background-color: #333333;
+  /*background-color: #DB0A5B;*/
+  background-color: rgba(142, 68, 173,1.0);
+  /*background-color: #333333;*/
+  /*background-color: rgba(255, 255, 255, 1);*/
+  /*background-color: rgba(40, 122, 255, 0.5);*/
+  /*background-color: rgba(0, 19, 127, 0.5);*/
+  /*background-color: white;*/
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
 .body-topRow {
   margin-left: 30px;
 }
 .body-mid {
-  border: 1px solid black;
+  /*border: 1px solid black;*/
   height: 120vh;
-  margin-left: 55px;
+  margin-left: 45px;
   margin-top: 20px;
-  background-color: #333333;
-  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  /*background-color: #333333;*/
+  /*background-color: rgba(255, 255, 255, 1);*/
+  /*background-color: rgba(40, 122, 255, 0.5);*/
+  /*background-color: rgba(0, 19, 127, 0.5);*/
+  /*box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);*/
+}
+.body-mid-side {
+  color: black;
+  /*border: 1px solid black;*/
+  height: 120vh;
+  margin-left: 15px;
+  margin-top: 20px;
+  /*background-color: #333333;*/
+  /*background-color: rgba(40, 122, 255, 0.5);*/
+  /*background-color: rgba(0, 19, 127, 0.5);*/
+  /*box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);*/
+}
+.body-mid-side table {
+  margin-top: 10px;
+  width: 100%;
+  overflow-wrap: break-word;
 }
 .real-mid {
-  border: 1px solid black;
-  height: 230vh;
+  /*border: 1px solid black;*/
+  height: 250vh;
   margin-left: 55px;
   margin-top: 20px;
-  background-color: #333333;
+  background-color: none;
+  /*background-color: #333333;*/
+  /*background-color: rgba(40, 122, 255, 0.5);*/
+  /*background-color: white;*/
+  /*box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);*/
+}
+.login-mid {
+  border: 1px solid black;
+  height: 75vh;
+  margin-left: 55px;
+  margin-top: 20px;
+  /*background-color: #333333;*/
+  background-color: rgba(142, 68, 173, 1);
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
 .body-game {
   border: 1px solid black;
   height: 150px;
   margin-left: 55px;
-  width: 90%;
+  width: 80%;
   margin-top: 20px;
-  background-image: url("jam.jpg");
+  background-image: url("http://www.webdesignburn.com/wp-content/uploads/2015/04/Grey-Texture-Background-and-Wallpaper-25.jpg");
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+link {
+  color: black;
+}
+small {
+  color: #B0B4BA
+}
+.game-logo {
+  width: 150px;
+  height: 150px;
+}
+.news-logo {
+  width: 150px;
+  height: 150px;
 }
 .body-game:hover {
   opacity: 0.6;
 }
 .body-char {
   border: 2px double black;
-  height: 280px;
+  height: 180px;
   width: 16%;
   margin-left: 48px;
   display: inline-block;
-  margin-top: 20px;
+  margin-top: 60px;
   margin-bottom: 20px;
   background-repeat: no-repeat;
   background-size: 100%;
-  box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.4);
+  border-radius: 300px;
+  /*box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.4);*/
 }
 .body-char img {
   object-fit: cover;
@@ -183,6 +299,18 @@ li a:hover {
 .body-char:hover {
   opacity: 0.6;
 }
+.char-name {
+  color: white;
+  width: 200px;
+  margin-top: 200px;
+  text-align: center;
+  padding-right: 50px;
+  font-family: 'Roboto Condensed', sans-serif;
+  text-transform: uppercase;
+}
+iframe {
+  margin-left: 250px;
+}
 
 /*==================================*/
 /*This is for the characterbody page*/
@@ -190,14 +318,17 @@ li a:hover {
 .info-cell {
   margin: 0 auto;
   margin-top: 0;
-  border: 2px solid red;
-  height: 98%;
+  margin-bottom: 1px;
+  border: 6px groove white;
+  height: 99%;
 }
 .info-top {
   font-family: 'Merriweather', serif;
   color: white;
   border: 1px solid black;
-  background-color: #333333;
+  /*background-color: rgba(40, 122, 255, 1);*/
+  /*background-color: rgba(12,36,76, 0.9);*/
+  background-color: rgba(142, 68, 173, 0.5);
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
   height: 90vh;
 }
@@ -208,6 +339,9 @@ li a:hover {
 .universal{
   display: inline-block;
 }
+.scroll {
+  background-color: rgba(12,36,76, 0.9);
+}
 
 
 /*======================*/
@@ -216,8 +350,28 @@ li a:hover {
 .footer {
   height: 300px;
   margin-bottom: -50px;
-  background: #010223;
+  /*background: #010223;*/
+  background: black;
 }
 .foot {
   height: 100%;
+}
+.foot-bot {
+  margin-top: 270px;
+  width: 100%;
+  border-top: 1px solid white;
+}
+
+.form-group {
+  width: 70%;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+.form-btn {
+  margin-left: 170px;
+  margin-top: 20px;
+}
+
+.summary {
+  line-height: 2;
 }
