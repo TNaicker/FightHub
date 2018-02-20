@@ -35,6 +35,13 @@ class Client {
       json: true,
     })
   }
+
+  rankings() {
+    return request({
+      uri: BASE.concat('/rankings/top'),
+      json: true,
+    })
+  }
 }
 
 module.exports = Client;
