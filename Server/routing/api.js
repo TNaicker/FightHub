@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const knex = require('../db.js');
+const request = require('request-promise');
 
 const characterDefinition = {
   answer: 1,
@@ -96,6 +97,26 @@ router.get('/api/:characterName/normals', (req, res) => {
     .catch((err) => {
       console.log(err);
       res.sendStatus(500);
+    })
+})
+
+router.get('/api/rankings/top', (req, res) => {
+  const rankhtml = []
+  request('http://rank.shoryuken.com/api/top?game=GGXRD')
+    .then((rankings) => {
+      request('http://rank.shoryuken.com/api/top?game=SF5')
+      .then((sfv) => {
+        request('http://rank.shoryuken.com/api/top?game=BBCP')
+        .then((bbcp) => {
+          rankhtml.push(rankings);
+          rankhtml.push(sfv);
+          rankhtml.push(bbcp);
+          res.send(rankhtml);
+        })
+      })
+    })
+    .catch((err) => {
+      console.log(err);
     })
 })
 
