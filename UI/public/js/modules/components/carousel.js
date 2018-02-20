@@ -7,13 +7,14 @@ import $ from "jquery";
 const carouselImages = [
   "http://nichegamer.com/wp-content/uploads/2015/09/guilty-gear-xrd-revelator-09-14-15-1.jpg",
   "https://img00.deviantart.net/92e4/i/2015/190/a/5/sfv_ken_wallpaper_by_heypierce-d90mt9j.jpg",
-  "https://images2.alphacoders.com/657/657268.jpg",
+  "https://pre00.deviantart.net/3b88/th/pre/f/2010/027/2/c/blazblue__cs_wallpaper_by_suchahussler.png",
 ]
 var counter = 0;
 
 export default class AppCarousel extends Component {
   render() {
   	var settings = {
+      adaptiveHeight: true,
     	dots: true,
       infinite: true,
       speed: 50,
@@ -29,7 +30,7 @@ export default class AppCarousel extends Component {
         if(counter >= 2) {
           counter = 0;
           console.log('counter in if', counter);
-          carousel.css('background-image', `url(${carouselImages[counter]})`)
+          carousel.css('background-image', `url(${carouselImages[counter]})`);
         } else {
           counter++;
           console.log(counter);
