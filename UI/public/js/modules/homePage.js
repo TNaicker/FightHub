@@ -3,11 +3,14 @@ const ReactDOM = require('react-dom');
 require('bootstrap/dist/css/bootstrap.css');
 require('../../css/app.css');
 const Client = require('../../../../Client/clientFile');
+import { Link } from 'react-router'
+import $ from 'jquery'
 import { Router, Route, hashHistory } from 'react-router'
 import AppCarousel from './components/carousel';
 import AppHead from './components/header';
 import AppFooter from './components/footer';
 import AppBody from './components/body';
+import MobileCarousel from './components/carousel_mobile';
 
 const AppGameList = React.createClass({
   getInitialState() {
@@ -23,11 +26,17 @@ const AppGameList = React.createClass({
 
    return (
        <div>
+       {this.rankings}
        { items }
       </div>
     );
   },
   componentWillMount() {
+    this.state.client.rankings().then((result) => {
+      result.forEach((table) => {
+        $('.body-mid-side').append(table);
+      })
+    })
     this.state.client.games().then((games) => {
       //Declaration of consts for holding game data
       const gameArr = [];
@@ -38,6 +47,11 @@ const AppGameList = React.createClass({
       //Set state gameName to array of game names
       this.setState({names: gameArr})
     })
+  },
+  rankings() {
+    this.state.client.rankings().then((result) => {
+      console.log(result);
+    })
   }
 })
 
@@ -46,10 +60,42 @@ const AppGameListItem = React.createClass({
   render: function() {
     return(
         <div className="row body-game">
-          <div className="col-xs-11">
-            <h2>{this.props.value}</h2>
+          <Link to="/characters">
+          <div className="col-xs-12 col-md-12">
+            <div className="row">
+              <div className="col-xs-3">
+                <img className="game-logo" src="http://ki.infil.net/images/punch.png"/>
+              </div>
+              <div className="col-xs-9 home-button">
+                <h2 className="home-button-title">{this.props.value}</h2>
+                <h4>Character information available here</h4>
+              </div>
+            </div>
+          </div>
+          </Link>
+        </div>
+    )
+  }
+})
+
+const NewsItem = React.createClass({
+  render: function() {
+    return(
+      <div className="row body-game">
+        <div className="col-xs-12 col-md-12 home-button">
+          <div className="row">
+            <div className="col-xs-3">
+              <img className="news-logo" src="https://cdn3.iconfinder.com/data/icons/communication-mass-media-news/512/world_news-512.png"/>
+            </div>
+            <a href="http://shoryuken.com/2017/10/10/vesperarcade-analyzes-street-fighter-v-arcade-editions-possible-new-v-triggers/">
+            <div className="col-xs-9">
+              <h2 className="home-button-title">VesperArcade analyzes Street Fighter V: Arcade Edition’s possible new V-Triggers</h2>
+              <h4></h4>
+            </div>
+            </a>
           </div>
         </div>
+      </div>
     )
   }
 })
@@ -61,9 +107,11 @@ export default React.createClass({
     return (
       <div>
         <AppCarousel/>
+        <MobileCarousel/>
         <div className="empty-space"></div>
         <AppBody>
           <AppGameList/>
+          <NewsItem/>
         </AppBody>
       </div>
     );
