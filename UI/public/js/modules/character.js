@@ -1,6 +1,7 @@
 import React from 'react'
 import AppBody from './components/characterBody';
 import Client from '../../../../Client/clientFile';
+const ReactDOM = require('react-dom');
 require('bootstrap/dist/css/bootstrap.css');
 
 const CharacterInformation = React.createClass({
@@ -9,15 +10,15 @@ const CharacterInformation = React.createClass({
       <div className="container-fluid">
         <div className="row info-top">
           <div className="col-xs-3 info-cell">
-            <h1 style={{textAlign: 'center'}}>{this.props.name}</h1>
+            <h1>{this.props.name}</h1>
             <img className="char-profile" src={this.props.src}/>
           </div>
           <div className="col-xs-6 info-cell">
             <h1>Summary</h1>
-            <h4>{this.props.summary}</h4>
+            <h4 className="summary">{this.props.summary}</h4>
           </div>
           <div className="col-xs-3 info-cell">
-            <h1 style={{textAlign: 'center'}}>Universal stats</h1>
+            <h1>Universal stats</h1>
             <h3>Defense modifier: {this.props.charinfo.defense_modifier}</h3>
             <h3>guts:* {this.props.charinfo.guts}</h3>
             <h3>Weight: {this.props.charinfo.weight}</h3>
@@ -102,11 +103,34 @@ export default React.createClass({
           charinfo={this.state.characterInfo}
         />
         <AppBody>
-          <h2>{this.props.params.characterName}</h2>
-          <h4>{this.state.characterInfo.summary}</h4>
+          <h2 style={{color: 'white'}}>{this.props.params.characterName}</h2>
+          <h4 className="summary">{this.state.characterInfo.summary}</h4>
           <NormalInfo
             charmoves={this.state.characterMoves}
           />
+          <div className="row">
+            <div className="col-xs-12 col-md-12 video-holder">
+              <h1>Watch Live GGXRD Gameplay</h1>
+              <iframe
+                className="video"
+                src="http://player.twitch.tv/?channel=joniosan&muted=true"
+                height="600"
+                width="800"
+                frameborder="0"
+                scrolling="no"
+                allowfullscreen="true">
+              </iframe>
+              <iframe
+                className="video-small"
+                src="http://player.twitch.tv/?channel=joniosan&muted=true"
+                height="300"
+                width="400"
+                frameborder="0"
+                scrolling="no"
+                allowfullscreen="true">
+              </iframe>
+            </div>
+          </div>
         </AppBody>
       </div>
     )
@@ -122,5 +146,8 @@ export default React.createClass({
             this.setState({characterMoves: charnormals, characterInfo: charinfo[0]});
         })
     })
+  },
+  componentDidMount() {
+    window.scrollTo(0,0);
   }
 })

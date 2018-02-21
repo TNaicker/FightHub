@@ -8,7 +8,7 @@ export default React.createClass({
         <div className="container-fluid">
           <div className="real-main">
             <div className="row body-midRow">
-              <div className="col-xs-11 body-mid real-mid" style={{color: 'red'}}>
+              <div className="col-xs-12 body-mid real-mid" style={{color: 'red'}}>
                 { this.props.children }
               </div>
             </div>

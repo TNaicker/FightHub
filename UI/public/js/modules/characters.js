@@ -72,7 +72,7 @@ const AppCharacterItem = React.createClass({
       <Link to={"/characters/" + this.props.id}>
         <div className="row body-char" style={this.props.img}>
           <div className="col-xs-1">
-            <p>{this.props.value}</p>
+            <h4 className="char-name">{this.props.id}</h4>
           </div>
         </div>
       </Link>
