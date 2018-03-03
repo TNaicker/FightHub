@@ -46,7 +46,7 @@ const AppCharacterList = React.createClass({
    })
 
    return (
-       <div>
+       <div className="row character-select">
        { items }
       </div>
     );
@@ -70,10 +70,8 @@ const AppCharacterItem = React.createClass({
   render: function() {
     return(
       <Link to={"/characters/" + this.props.id}>
-        <div className="row body-char" style={this.props.img}>
-          <div className="col-xs-1">
-            <h4 className="char-name">{this.props.id}</h4>
-          </div>
+        <div className="col-xs-3 body-char" style={this.props.img}>
+          <p>{this.props.id}</p>
         </div>
       </Link>
     )

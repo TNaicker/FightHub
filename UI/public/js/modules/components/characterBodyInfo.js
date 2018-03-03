@@ -6,12 +6,10 @@ export default React.createClass({
     return (
       <div>
         <div className="container-fluid">
-          <div className="row">
-            <div className="real-main col-xs-12 col-md-12">
-              <div className="body-midRow">
-                <div className="body-mid real-mid">
-                  { this.props.children }
-                </div>
+          <div className="character-info-main">
+            <div className="body-midRow">
+              <div className="body-mid real-mid">
+                { this.props.children }
               </div>
             </div>
           </div>
