@@ -9,15 +9,11 @@ const CharacterInformation = React.createClass({
     return (
       <div className="container-fluid">
         <div className="row info-top">
-          <div className="col-xs-3 info-cell">
+          <div className="col-xs-8 info-cell">
             <h1>{this.props.name}</h1>
             <img className="char-profile" src={this.props.src}/>
           </div>
-          <div className="col-xs-6 info-cell">
-            <h1>Summary</h1>
-            <h4 className="summary">{this.props.summary}</h4>
-          </div>
-          <div className="col-xs-3 info-cell">
+          <div className="col-xs-4 info-cell">
             <h1>Universal stats</h1>
             <h3>Defense modifier: {this.props.charinfo.defense_modifier}</h3>
             <h3>guts:* {this.props.charinfo.guts}</h3>

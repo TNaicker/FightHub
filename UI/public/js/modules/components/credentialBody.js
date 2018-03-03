@@ -31,6 +31,7 @@ export default React.createClass({
   render: function() {
     return (
       <div>
+        <div className="correctional-space"></div>
         <div className="container-fluid">
           <div className="login-main">
             <div className="row login-midRow">
@@ -40,6 +41,7 @@ export default React.createClass({
             </div>
           </div>
         </div>
+        <div className="correctional-space"></div>
       </div>
     )
   }

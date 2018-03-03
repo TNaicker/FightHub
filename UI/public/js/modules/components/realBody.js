@@ -1,4 +1,5 @@
 import React from 'react';
+import ScrollUpButton from "react-scroll-up-button";
 
 //THIS IS THE MAIN BODY PORTION OF THE HOME PAGE
 export default React.createClass({
@@ -6,6 +7,7 @@ export default React.createClass({
     return (
       <div>
         <div>
+          <ScrollUpButton ContainerClassName="scroll"/>
           <div className="real-main">
             <div className="row body-topRow">
               <div className="col-xs-2">

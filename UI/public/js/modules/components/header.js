@@ -8,7 +8,6 @@ export default React.createClass({
   render: function() {
     return (
       <div>
-        <ScrollUpButton ContainerClassName="scroll"/>
         <div className="container-fluid header">
           <div className="row head-upper">
             <div className="col-xs-12">
