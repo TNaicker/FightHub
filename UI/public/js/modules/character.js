@@ -1,5 +1,5 @@
 import React from 'react'
-import AppBody from './components/characterBody';
+import AppBody from './components/characterBodyInfo';
 import Client from '../../../../Client/clientFile';
 const ReactDOM = require('react-dom');
 require('bootstrap/dist/css/bootstrap.css');
@@ -47,11 +47,94 @@ const NormalRow = React.createClass({
   }
 })
 
+const NormalRow1 = React.createClass({
+  render() {
+    return(
+      <tr>
+        <td>{this.props.row.normal_name}</td>
+        <td>{this.props.row.damage}</td>
+        <td>{this.props.row.guard}</td>
+        <td>{this.props.row.attack_lvl}</td>
+        <td>{this.props.row.startup}</td>
+      </tr>
+    )
+  }
+})
+const NormalRow2 = React.createClass({
+  render() {
+    return(
+      <tr>
+        <td>{this.props.row.normal_name}</td>
+        <td>{this.props.row.active}</td>
+        <td>{this.props.row.invuln}</td>
+        <td>{this.props.row.recovery}</td>
+        <td>{this.props.row.frame_advantage}</td>
+      </tr>
+    )
+  }
+})
+
+const NormalInfoMobile2 = React.createClass({
+  render() {
+    return (
+      <div>
+        <table className="mobile-table table table-bordered">
+          <thead>
+            <tr>
+              <th>normal</th>
+              <th>active</th>
+              <th>invlun</th>
+              <th>recovery</th>
+              <th>frame adv</th>
+            </tr>
+          </thead>
+          <tbody>
+            {this.renderRows()}
+          </tbody>
+        </table>
+      </div>
+    )
+  },
+  renderRows() {
+    return this.props.charmoves.map((row) => {
+      return <NormalRow2 row={row}/>
+    })
+  }
+})
+
+const NormalInfoMobile1 = React.createClass({
+  render() {
+    return (
+      <div>
+        <table className="mobile-table table table-bordered">
+          <thead>
+            <tr>
+              <th>normal</th>
+              <th>damage</th>
+              <th>guard</th>
+              <th>attack level</th>
+              <th>startup</th>
+            </tr>
+          </thead>
+          <tbody>
+            {this.renderRows()}
+          </tbody>
+        </table>
+      </div>
+    )
+  },
+  renderRows() {
+    return this.props.charmoves.map((row) => {
+      return <NormalRow1 row={row}/>
+    })
+  }
+})
+
 const NormalInfo = React.createClass({
   render() {
     return (
       <div>
-        <table className="table table-bordered">
+        <table className="normal-table table">
           <thead>
             <tr>
               <th>normal</th>
@@ -62,7 +145,7 @@ const NormalInfo = React.createClass({
               <th>active</th>
               <th>invlun</th>
               <th>recovery</th>
-              <th>frame advantage</th>
+              <th>frame adv</th>
             </tr>
           </thead>
           <tbody>
@@ -102,11 +185,20 @@ export default React.createClass({
           <h2 style={{color: 'white'}}>{this.props.params.characterName}</h2>
           <h4 className="summary">{this.state.characterInfo.summary}</h4>
           <NormalInfo
+            className="normal-table"
+            charmoves={this.state.characterMoves}
+          />
+          <NormalInfoMobile1
+            className="mobile-table"
+            charmoves={this.state.characterMoves}
+          />
+          <NormalInfoMobile2
+            className="mobile-table"
             charmoves={this.state.characterMoves}
           />
           <div className="row">
             <div className="col-xs-12 col-md-12 video-holder">
-              <h1>Watch Live GGXRD Gameplay</h1>
+              <h3>Watch Live GGXRD Gameplay</h3>
               <iframe
                 className="video"
                 src="http://player.twitch.tv/?channel=joniosan&muted=true"
@@ -121,6 +213,15 @@ export default React.createClass({
                 src="http://player.twitch.tv/?channel=joniosan&muted=true"
                 height="300"
                 width="400"
+                frameborder="0"
+                scrolling="no"
+                allowfullscreen="true">
+              </iframe>
+              <iframe
+                className="video-mobile"
+                src="http://player.twitch.tv/?channel=joniosan&muted=true"
+                height="200"
+                width="300"
                 frameborder="0"
                 scrolling="no"
                 allowfullscreen="true">

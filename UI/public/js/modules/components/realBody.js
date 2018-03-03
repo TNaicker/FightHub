@@ -6,19 +6,15 @@ export default React.createClass({
   render: function() {
     return (
       <div>
-        <div>
+        <div className="row">
           <ScrollUpButton ContainerClassName="scroll"/>
-          <div className="real-main">
+          <div className="real-main col-xs-12 col-md-12">
             <div className="row body-topRow">
-              <div className="col-xs-2">
-              </div>
-              <div className="col-xs-8 body-top">
-              </div>
-              <div className="col-xs-2">
+              <div className="col-xs-12 body-top">
               </div>
             </div>
             <div className="row body-midRow">
-              <div className="col-xs-12 body-mid real-mid" style={{color: 'red'}}>
+              <div className="body-mid real-mid" style={{color: 'red'}}>
                 { this.props.children }
               </div>
             </div>
