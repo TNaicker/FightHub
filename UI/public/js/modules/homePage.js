@@ -89,7 +89,7 @@ const NewsItem = React.createClass({
             </div>
             <a href="http://shoryuken.com/2017/10/10/vesperarcade-analyzes-street-fighter-v-arcade-editions-possible-new-v-triggers/">
             <div className="col-xs-9">
-              <h2 className="home-button-title">VesperArcade analyzes Street Fighter V: Arcade Edition’s possible new V-Triggers</h2>
+              <h2 className="home-button-title">VesperArcade analyzes Street Fighter V</h2>
               <h4></h4>
             </div>
             </a>

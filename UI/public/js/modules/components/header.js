@@ -21,7 +21,7 @@ export default React.createClass({
             </div>
           </div>
           <div className="row head-lower">
-            <div className="col-xs-12">
+            <div className="col-xs-12 bot-nav">
               <div className="bot-nav-button col-xs-4">
                 <Link to="/home"><button>Home</button></Link>
               </div>
