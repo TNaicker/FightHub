@@ -15,7 +15,7 @@ export default React.createClass({
                 <ul className="top-nav">
                   <li><Link to="/home">ICON</Link></li>
                   <li><Link to="/login">Login</Link></li>
-                  <li><a href="#">Signup</a></li>
+                  <li><Link to="/home">Signup</Link></li>
                 </ul>
               </nav>
             </div>
@@ -26,7 +26,7 @@ export default React.createClass({
                 <Link to="/home"><button>Home</button></Link>
               </div>
               <div className="bot-nav-button col-xs-4">
-                <Link to="/characters"><button>Games</button></Link>
+                <Link to="/games"><button>Games</button></Link>
               </div>
               <div className="bot-nav-button col-xs-4">
                 <a href="https://github.com/TNaicker/FightHub"><button>Github</button></a>

@@ -259,6 +259,17 @@ li a:hover {
   /*background-color: white;*/
   /*box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);*/
 }
+.games-body {
+  background-color: rgba(142, 68, 173, 0.5);
+  height: 1000px;
+  border: 1px solid rgba(0, 0, 0, 0.9);
+  border-radius: 10px;
+}
+.game-list-title {
+  font-family: 'Press Start 2P', cursive;
+  color: white;
+  text-align: center;
+}
 .login-mid {
   border: 1px solid black;
   height: 300px;
